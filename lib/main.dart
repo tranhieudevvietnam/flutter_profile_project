@@ -53,9 +53,7 @@ class _MyHomePageState extends State<MyHomePage> {
               height: 30,
             ),
             ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  topRight: Radius.circular(20),
-                  bottomRight: Radius.circular(20)),
+              borderRadius: const BorderRadius.only(topRight: Radius.circular(20), bottomRight: Radius.circular(20)),
               child: SizedBox(
                 height: width / 2,
                 width: width / 1.2,
@@ -89,10 +87,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     padding: const EdgeInsets.symmetric(vertical: 30),
                     child: Stack(
                       children: [
-                        Positioned(
-                            left: 0,
-                            top: 0,
-                            child: Assets.icon1.svg(width: 30)),
+                        Positioned(left: 0, top: 0, child: Assets.icon1.svg(width: 30)),
                         const Padding(
                           padding: EdgeInsets.only(left: 50, right: 30),
                           child: Text(
@@ -105,10 +100,7 @@ class _MyHomePageState extends State<MyHomePage> {
                             ),
                           ),
                         ),
-                        Positioned(
-                            right: 0,
-                            bottom: 0,
-                            child: Assets.icon2.svg(width: 20)),
+                        Positioned(right: 0, bottom: 0, child: Assets.icon2.svg(width: 20)),
                       ],
                     ),
                   ),
@@ -142,8 +134,13 @@ class _MyHomePageState extends State<MyHomePage> {
                       icon: Assets.link.svg(width: 30),
                       text: "Motorcycle insurance",
                       onTap: (value) async {
-                        await launchUrl(Uri.parse(
-                            "https://drive.google.com/file/d/1cMlVxrV_K6dKaiVfPZBjBlhH0ZvPSczp/view?usp=sharing"));
+                        await launchUrl(Uri.parse("https://drive.google.com/file/d/1cMlVxrV_K6dKaiVfPZBjBlhH0ZvPSczp/view?usp=sharing"));
+                      }),
+                  _buildTileAndText(
+                      icon: Assets.link.svg(width: 30),
+                      text: "Link CV Flutter",
+                      onTap: (value) async {
+                        await launchUrl(Uri.parse("https://drive.google.com/file/d/1Wv4hEG1qb5UObfhlQCZ-yS4LfTn-9gmP/view"));
                       }),
                 ],
               ),
@@ -154,10 +151,7 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 
-  Widget _buildTileAndText(
-      {required String text,
-      required Widget icon,
-      Function(String value)? onTap}) {
+  Widget _buildTileAndText({required String text, required Widget icon, Function(String value)? onTap}) {
     return InkWell(
       onTap: () {
         onTap?.call(text);
